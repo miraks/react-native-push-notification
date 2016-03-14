@@ -157,11 +157,7 @@ Notifications._onNotification = function(data, isFromBackground = null) {
 			this.onNotification({
 				foreground: ! isFromBackground,
 				message: data.message,
-				data: (
-					typeof data.data !== 'undefined'
-					? data.data
-					: {} 
-				),
+				...data
 			});
 		}
 	}
