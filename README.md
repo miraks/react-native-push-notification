@@ -69,7 +69,8 @@ dependencies {
 Register module (in `MainActivity.java`)
 
 ```java
-import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import
+import android.content.Intent; // <--- Import Intent
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
 
 public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
@@ -145,7 +146,11 @@ PushNotification.configure({
         badge: true,
         sound: true
     },
-    
+
+    // Should the initial notification be popped automatically
+    // default: true
+    popInitialNotification: true,
+
     /**
       * IOS ONLY: (optional) default: true
       * - Specified if permissions will requested or not,
